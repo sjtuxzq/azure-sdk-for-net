@@ -834,6 +834,62 @@ namespace DataFactory.Tests.JsonSamples
 }";
 
         [JsonSample]
+        public const string DynamicsLinkedService_ServicePrincipalKey = @"
+{
+    name: ""LinkedService-Dynamics-ServicePrincipalKey"",
+    properties:
+    {
+        type : ""Dynamics"",
+        connectVia : {
+            referenceName : ""Connection1"",
+            type : ""IntegrationRuntimeReference""
+        },
+        typeProperties :
+        {
+            deploymentType : ""Online"", 
+            serviceUri : ""https://fake.crm.dynamics.com"",
+            authenticationType : ""AADServicePrincipal"", 
+            servicePrincipalId : ""service principal id"",
+            servicePrincipalCredentialType : ""ServicePrincipalKey"",
+            servicePrincipalCredential : { 
+                value : ""service principal key"",
+                type : ""SecureString""
+            }
+        }
+    }
+}";
+
+        [JsonSample]
+        public const string DynamicsLinkedService_ServicePrincipalCert = @"
+{
+    name: ""LinkedService-Dynamics-ServicePrincipalCert"",
+    properties:
+    {
+        type : ""Dynamics"",
+        connectVia : {
+            referenceName : ""Connection1"",
+            type : ""IntegrationRuntimeReference""
+        },
+        typeProperties :
+        {
+            deploymentType : ""Online"", 
+            serviceUri : ""https://fake.crm.dynamics.com"",
+            authenticationType : ""AADServicePrincipal"", 
+            servicePrincipalId : ""service principal id"",
+            servicePrincipalCredentialType : ""ServicePrincipalCert"",
+            servicePrincipalCredential : { 
+                type : ""AzureKeyVaultSecret"", 
+                secretName : ""fakeCertName"", 
+                store: { 
+                    type : ""LinkedServiceReference"", 
+                    referenceName : ""AKVLinkedService"" 
+                } 
+            }
+        }
+    }
+}";
+
+        [JsonSample]
         public const string DynamicsLinkedService = @"
 {
     name: ""LinkedService-Dynamics"",
@@ -880,6 +936,62 @@ namespace DataFactory.Tests.JsonSamples
 }";
 
         [JsonSample]
+        public const string DynamicsCrmLinkedService_ServicePrincipalKey = @"
+{
+    name: ""LinkedService-DynamicsCrm-ServicePrincipalKey"",
+    properties:
+    {
+        type : ""DynamicsCrm"",
+        connectVia : {
+            referenceName : ""Connection1"",
+            type : ""IntegrationRuntimeReference""
+        },
+        typeProperties :
+        {
+            deploymentType : ""Online"", 
+            serviceUri : ""https://fake.crm.dynamics.com"",
+            authenticationType : ""AADServicePrincipal"", 
+            servicePrincipalId : ""service principal id"",
+            servicePrincipalCredentialType : ""ServicePrincipalKey"",
+            servicePrincipalCredential : { 
+                value : ""service principal key"",
+                type : ""SecureString""
+            }
+        }
+    }
+}";
+
+        [JsonSample]
+        public const string DynamicsCrmLinkedService_ServicePrincipalCert = @"
+{
+    name: ""LinkedService-DynamicsCrm-ServicePrincipalCert"",
+    properties:
+    {
+        type : ""DynamicsCrm"",
+        connectVia : {
+            referenceName : ""Connection1"",
+            type : ""IntegrationRuntimeReference""
+        },
+        typeProperties :
+        {
+            deploymentType : ""Online"", 
+            serviceUri : ""https://fake.crm.dynamics.com"",
+            authenticationType : ""AADServicePrincipal"", 
+            servicePrincipalId : ""service principal id"",
+            servicePrincipalCredentialType : ""ServicePrincipalCert"",
+            servicePrincipalCredential : { 
+                type : ""AzureKeyVaultSecret"", 
+                secretName : ""fakeCertName"", 
+                store: { 
+                    type : ""LinkedServiceReference"", 
+                    referenceName : ""AKVLinkedService"" 
+                } 
+            }
+        }
+    }
+}";
+
+        [JsonSample]
         public const string CommonDataServiceForAppsLinkedService = @"
 {
     name: ""LinkedService-CommonDataServiceForApps"",
@@ -898,6 +1010,62 @@ namespace DataFactory.Tests.JsonSamples
                 type : ""SecureString""
             },
             encryptedCredential : ""fake credential""
+        }
+    }
+}";
+
+        [JsonSample]
+        public const string CommonDataServiceForAppsLinkedService_ServicePrincipalKey = @"
+{
+    name: ""LinkedService-CommonDataServiceForApps-ServicePrincipalKey"",
+    properties:
+    {
+        type : ""CommonDataServiceForApps"",
+        connectVia : {
+            referenceName : ""Connection1"",
+            type : ""IntegrationRuntimeReference""
+        },
+        typeProperties :
+        {
+            deploymentType : ""Online"", 
+            serviceUri : ""https://fake.crm.dynamics.com"",
+            authenticationType : ""AADServicePrincipal"", 
+            servicePrincipalId : ""service principal id"",
+            servicePrincipalCredentialType : ""ServicePrincipalKey"",
+            servicePrincipalCredential : { 
+                value : ""service principal key"",
+                type : ""SecureString""
+            }
+        }
+    }
+}";
+
+        [JsonSample]
+        public const string CommonDataServiceForAppsLinkedService_ServicePrincipalCert = @"
+{
+    name: ""LinkedService-CommonDataServiceForApps-ServicePrincipalCert"",
+    properties:
+    {
+        type : ""CommonDataServiceForApps"",
+        connectVia : {
+            referenceName : ""Connection1"",
+            type : ""IntegrationRuntimeReference""
+        },
+        typeProperties :
+        {
+            deploymentType : ""Online"", 
+            serviceUri : ""https://fake.crm.dynamics.com"",
+            authenticationType : ""AADServicePrincipal"", 
+            servicePrincipalId : ""service principal id"",
+            servicePrincipalCredentialType : ""ServicePrincipalCert"",
+            servicePrincipalCredential : { 
+                type : ""AzureKeyVaultSecret"", 
+                secretName : ""fakeCertName"", 
+                store: { 
+                    type : ""LinkedServiceReference"", 
+                    referenceName : ""AKVLinkedService"" 
+                } 
+            }
         }
     }
 }";
